@@ -21,6 +21,7 @@ body{width:100%; height:100vh; background:#fffee2; display:flex; justify-content
 
 .filter-images .filter-image.hide{display: none;}
 .filter-images .filter-image.schow{display: none;}
+
 @keyframes scale {
   from{
     transform:scale(0);
@@ -35,3 +36,37 @@ body{width:100%; height:100vh; background:#fffee2; display:flex; justify-content
 .filter-images .filter-image img{width:100%; display:block;}
 .filter-images .filter-image span::after{content:''; position: absolute; width: 100%; height: 100%; background: #fff; top: 0; left: 0; opacity: 0; transition: all 0.3s;} 
 .filter-images .filter-image:hover span::after {opacity: 0.3;}
+
+
+/* light box style */
+.light-box{width: 50%; background: #f5ecd3; position: fixed; height: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 1rem; border-radius: 0.25rem; animation: box-scale 0.3s 1; z-index:10; display: none;} 
+
+
+@keyframes fadeOutLeft {
+  0% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+  100% {
+     opacity: 0;
+     transform: translateX(-20px);
+  }
+} 
+
+/* @keyframes box-scale {
+  from{
+    translate: (-50%, -50%)scale(0.3);
+  }
+  to{
+    translate: (-50%, -50%)scale(1);
+  }
+} */
+
+.light-box .light-box-text{display: flex; justify-content: space-between ; padding-bottom: 1rem;}
+.light-box .light-box-text .title{color: #fff; display: flex; gap: 0.75rem;}
+.light-box .light-box-text button{padding: 0.25rem 0.75rem; font-size: 12px;}
+.light-box .light-box-image{border: 1px solid #fff; padding: 0.25rem; border-radius: 0.25rem;}
+.light-box img{ width: 100%; display: block; }
+
+
+.overlay{width: 100%; height: 100%; background: #000; opacity: 0.4; left:0; right: 0;top: 0; position: fixed; display: none;} 
